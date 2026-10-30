@@ -42,23 +42,43 @@ header { background: linear-gradient(180deg, #0a0c12 0%, #12161f 100%); backdrop
 .hero-banner { width: 100%; max-width: 520px; height: auto; border-radius: 16px; margin: 0 auto 1.5rem; display: block; box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
 .hero h1 { font-size: 2.85rem; line-height: 1.08; margin-bottom: 1.2rem; font-weight: 800; letter-spacing: -0.8px; background: linear-gradient(180deg, #fff 30%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 12px rgba(240,208,120,0.25)); }
 .hero h1 em { font-style: normal; background: none; -webkit-text-fill-color: var(--gold); }
-.hero p { font-size: 1.15rem; color: var(--muted); max-width: 620px; margin: 0 auto; font-weight: 400; line-height: 1.6; }
-.hero-download-btn {
+.features-list { list-style: none; text-align: left; background: #141419; border: 1px solid #222227; padding: 1rem 1.2rem; border-radius: 12px; margin: 1.2rem auto 1.2rem; max-width: 420px; }
+.features-list li { font-size: 0.92rem; color: #cccccc; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+.features-list li:last-child { margin-bottom: 0; }
+.features-list li::before { content: "✓"; color: var(--gold); font-weight: bold; }
+.risk-text { font-size: 0.75rem; color: #77777c; line-height: 1.5; margin: 0.8rem auto 1.2rem; max-width: 480px; }
+.hero-download-btn, .content-download-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background: #00d4a0;
-  color: #03120c;
+  gap: 0.6rem;
+  background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+  color: #1a1200;
   font-weight: 900;
-  padding: 0.8rem 3.2rem;
+  padding: 0.85rem 2.2rem;
   border-radius: 999px;
   font-size: 1.05rem;
   border: 3px solid #000000;
   text-decoration: none;
-  margin-top: 1.2rem;
-  box-shadow: 0 4px 0 #00996e, 0 8px 24px rgba(0,212,160,0.45);
-  transition: transform 0.12s;
+  margin: 1.2rem 0;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: btn-glow 2.5s ease-in-out infinite;
+}
+.hero-download-btn:hover, .content-download-btn:hover,
+.hero-download-btn:active, .content-download-btn:active {
+  transform: scale(0.96);
+  color: #1a1200;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 0 22px rgba(255, 215, 0, 0.65); }
+}
+.btn-icon { animation: arrow-pulse 1.5s ease-in-out infinite; }
+@keyframes arrow-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
 }
 .hero-download-btn:hover { transform: translateY(-2px); color: #03120c; }
 section { padding: 2.6rem 0; border-top: 1px solid var(--border); }
@@ -110,7 +130,7 @@ li { margin-bottom: 0.45rem; }
   border-top: 1px solid #252a38;
 }
 footer { padding: 2.5rem 0 6rem; text-align: center; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
-.badge { display: inline-block; background: #0d2a22; color: var(--green); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.8rem; box-shadow: 0 0 20px rgba(0,212,160,0.35); }
+.badge { display: inline-block; background: linear-gradient(135deg, #0d2a22, #0a1f1a); color: var(--green); padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.8rem; border: 1px solid #00d4a0; box-shadow: 0 0 20px rgba(0,212,160,0.35); letter-spacing: 0.3px; }
 .highlight { background: var(--surface); padding: 1.2rem; border-radius: 12px; border-left: 4px solid var(--gold); margin: 1.2rem 0; }
 .modal-overlay {
   position: fixed;
@@ -258,32 +278,31 @@ footer { padding: 2.5rem 0 6rem; text-align: center; color: var(--muted); font-s
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(7,9,15,0.97);
-  backdrop-filter: blur(12px);
-  padding: 0.75rem 1rem 0.9rem;
+  background: rgba(18,18,22,0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1rem 0.8rem;
   text-align: center;
   z-index: 100;
   border-top: 1px solid #2a2f3d;
 }
 .sticky-download a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  background: linear-gradient(180deg, #ffd000 0%, #ffb800 100%);
+  gap: 0.5rem;
+  background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
   color: #1a1200;
   font-weight: 900;
-  padding: 0.8rem 2.6rem 0.8rem 0.8rem;
-  border-radius: 999px;
-  font-size: 1.1rem;
-  letter-spacing: 0.3px;
-  border: 3px solid #ffffff;
+  font-size: 1.05rem;
   text-decoration: none;
-  transition: transform 0.12s;
-  position: relative;
-  min-width: 300px;
-  box-shadow: 0 4px 0 #e6a200, 0 10px 32px rgba(255,184,0,0.65);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: 3px solid #000000;
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.5);
+  animation: btn-glow 2.5s ease-in-out infinite;
+  transition: transform 0.15s;
 }
+.sticky-download a:active { transform: scale(0.96); }
 .sticky-download a:hover {
   transform: translateY(-2px);
   color: #1a1200;
@@ -393,11 +412,14 @@ document.addEventListener('click', function() {
   <section class="hero">
     <div class="badge">18+ Only · Responsible Gaming</div>
     <h1>Teen Patti Master</h1>
-    <p>A practical guide to the classic three-card game on mobile. Hand rankings, how rounds actually work, safe download steps, and what to expect with bonuses and withdrawals. Written for people who already know the game.</p>
-    <div class="disclaimer-banner">
-      Real-money gaming involves financial risk and is restricted or illegal in some Indian states. This page is information only. 18+ only. Verify everything inside the app and never play with money you cannot afford to lose.
-    </div>
-    <a href="https://www.earntp.com/m/14043" target="_blank" rel="noopener" class="hero-download-btn">Download App →</a>
+    <ul class="features-list">
+      <li>Practical Guide to Classic 3-Card Game</li>
+      <li>Verified Safe & Secure APK Installation</li>
+      <li>Latest 2026 Feature & Bonus Rules Included</li>
+      <li>Instant UPI & Bank Withdrawal Guide</li>
+    </ul>
+    <p class="risk-text">Real-money gaming involves financial risk and is restricted or illegal in some Indian states. This page is for information only. Verify everything inside the app.</p>
+    <a href="https://www.earntp.com/m/14043" target="_blank" rel="noopener" class="hero-download-btn"><span class="btn-icon">⬇</span> Download Official APK v2026</a>
   </section>
 
   <section>
@@ -588,13 +610,11 @@ document.getElementById('downloadModal').addEventListener('click', function(e) {
 </script>
 
 <div class="sticky-download">
-  <a href="https://www.earntp.com/m/14043" target="_blank" rel="noopener">
-    <span class="dl-circle">
-      <svg viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v2H5v-2z"/></svg>
-    </span>
-    Download App
-    <span class="arrow">→</span>
-  </a>
+  <a href="https://www.earntp.com/m/14043" target="_blank" rel="noopener">⬇ Download APK</a>
 </div>
+</body>
+</html>ipt>
+
+
 </body>
 </html>
