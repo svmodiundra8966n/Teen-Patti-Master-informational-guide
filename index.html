@@ -30,11 +30,12 @@ header { background: linear-gradient(180deg, #0a0c12 0%, #12161f 100%); backdrop
 .logo { font-size: 1.3rem; font-weight: 800; color: var(--gold); letter-spacing: -0.5px; white-space: nowrap; }
 .logo span { font-weight: 500; color: #f0eee9; }
 
-.dropdown { display: none; position: fixed; top: 0; right: 0; width: 260px; height: 100vh; background: #ffffff; z-index: 300; box-shadow: -4px 0 24px rgba(0,0,0,0.15); padding: 1.2rem 0; overflow-y: auto; }
-.dropdown.show { display: block; }
-.dropdown a { display: block; padding: 1rem 1.4rem; color: #222; font-size: 1rem; font-weight: 500; border-bottom: 1px solid #eee; text-decoration: none; }
-.dropdown a:hover { background: #f8f8f8; }
-.dropdown .tg-btn { display: block; margin: 1.2rem 1rem; background: #0088cc; color: #fff; text-align: center; padding: 0.85rem; border-radius: 8px; font-weight: 700; text-decoration: none; }
+.dropdown { position: fixed; top: 0; right: -100%; width: 78%; max-width: 320px; height: 100vh; background: rgba(20,20,25,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-left: 1px solid #222227; z-index: 400; transition: right 0.28s ease; padding: 1rem 0; overflow-y: auto; }
+.dropdown.show { right: 0; }
+.dropdown-close { position: absolute; top: 12px; right: 14px; background: none; border: none; color: #ccc; font-size: 1.6rem; cursor: pointer; }
+.dropdown a { display: block; padding: 0.95rem 1.5rem; color: #e0e0e5; font-size: 16px; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.dropdown a:hover { color: var(--gold); background: rgba(240,208,120,0.05); }
+.dropdown .tg-btn { display: block; margin: 1.5rem 1.2rem; background: linear-gradient(180deg, #FFD700, #FF8C00); color: #1a1200; text-align: center; padding: 0.9rem; border-radius: 10px; font-weight: 800; text-decoration: none; }
 .ticker { background: linear-gradient(90deg, #0d2a22, #0a1f1a); color: #7dcea0; font-size: 0.82rem; padding: 0.45rem 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid #1a3a2f; }
 .ticker span { display: inline-block; animation: ticker 28s linear infinite; padding-left: 100%; }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
@@ -405,12 +406,13 @@ document.addEventListener('click', function() {
     </div>
     <button class="menu-btn" id="menuBtn" onclick="document.getElementById('dropdown').classList.toggle('show')" style="flex-shrink:0;">☰</button>
     <div class="dropdown" id="dropdown">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy-policy.html">Privacy</a>
-      <a href="https://t.me/+1EwWUF3fhRdiZjhl" target="_blank" rel="noopener" class="tg-btn">Join Telegram</a>
+      <button class="dropdown-close" onclick="document.getElementById('dropdown').classList.remove('show')">&times;</button>
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">ℹ️ About</a>
+      <a href="contact.html">✉️ Contact</a>
+      <a href="disclaimer.html">⚠️ Disclaimer</a>
+      <a href="privacy-policy.html">🔒 Privacy</a>
+      <a href="https://t.me/+1EwWUF3fhRdiZjhl" target="_blank" rel="noopener" class="tg-btn">✈️ Join Telegram</a>
     </div>
   </div>
 </header>
