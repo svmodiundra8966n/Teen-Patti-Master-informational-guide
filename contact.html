@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Teen Patti Master</title>
+<meta name="description" content="Contact page for this Teen Patti Master informational guide. Questions about the content can be sent here.">
+<style>
+:root { --bg:#0d0d11; --gold:#f0d078; --text:#f0eee9; --muted:#9aa0b0; --border:#222227; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--text); line-height:1.75; font-size:1.05rem; padding-bottom:60px; }
+a { color:var(--gold); text-decoration:none; }
+.container { max-width:820px; margin:0 auto; padding:0 1.3rem; }
+header { background:#141419; padding:0.6rem 0; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:90; }
+.header-inner { display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:1.3rem; font-weight:800; color:var(--gold); }
+.logo span { font-weight:500; color:var(--text); }
+.menu-btn { background:#1a1f2b; border:1px solid #2e3548; color:var(--gold); font-size:1.3rem; cursor:pointer; padding:0.3rem 0.55rem; border-radius:8px; }
+.dropdown { display:none; position:absolute; top:calc(100% + 6px); right:1rem; background:#161a24; border:1px solid #2e3548; border-radius:12px; min-width:160px; z-index:100; }
+.dropdown.show { display:block; }
+.dropdown a { display:block; padding:0.7rem 1rem; color:var(--muted); font-size:0.9rem; border-bottom:1px solid #252a38; }
+.dropdown a:hover { color:var(--gold); }
+h1 { font-size:2rem; margin:2rem 0 1rem; color:var(--gold); }
+h2 { font-size:1.4rem; margin:1.6rem 0 0.8rem; color:var(--gold); }
+p { margin-bottom:1rem; }
+footer { padding:2rem 0; text-align:center; color:var(--muted); font-size:0.9rem; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="logo">Teen Patti <span>Master</span></div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="dropdown" id="dropdown">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <h1>Contact Us</h1>
+  <p>We welcome feedback, corrections, and general questions about the content on this informational guide. We do not operate the Teen Patti Master app and cannot assist with in-app accounts, deposits, or withdrawals.</p>
+  <h2>How to Reach Us</h2>
+  <p>For feedback, DMCA inquiries, or questions about download links and page content, email us at <strong>teenpattimasterappx@gmail.com</strong> or message us on Telegram: <a href="https://t.me/+1EwWUF3fhRdiZjhl" target="_blank" rel="noopener">Telegram Group</a>. We aim to respond within 48 hours.</p>
+  <h2>What We Can Help With</h2>
+  <p>Factual corrections to hand rankings or installation steps, questions about the information on this site, and DMCA or copyright notices. Please do not send KYC documents, bank details, or screenshots of balances. This site does not handle money.</p>
+  <h2>Important</h2>
+  <p>18+ only. Play responsibly. Real-money gaming involves financial risk and is restricted or illegal in some locations.</p>
+  <footer>© 2026 Teen Patti Master Guide · Information only · 18+</footer>
+</div>
+<script>
+document.getElementById('menuBtn').addEventListener('click', function(e){ e.stopPropagation(); document.getElementById('dropdown').classList.toggle('show'); });
+document.addEventListener('click', function(){ document.getElementById('dropdown').classList.remove('show'); });
+</script>
+</body>
+</html>
